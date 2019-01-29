@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTiposTable extends Migration
+class CreateAreaSegmentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTiposTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipos', function (Blueprint $table) {
+        Schema::create('area_segmento', function (Blueprint $table) {
             $table->increments('id');
-            $table->string ('nombre');
-            $table->string ('descripcion')->nullable ();
+            $table->integer ('segmento_id');
+            $table->integer ('area_id');
+            $table->integer ('orden');
+            $table->string('situacion');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTiposTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipos');
+        Schema::dropIfExists('tipo_area');
     }
 }

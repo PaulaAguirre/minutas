@@ -15,10 +15,10 @@ class CreateMinutasTable extends Migration
     {
         Schema::create('minutas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cliente_id');
             $table->integer ('user_id');
-            $table->integer ('tipo_id');
             $table->time ('hora');
-            $table->string ('plan')->nullable ();
+            $table->string ('plan_general')->nullable ();
             $table->string ('dificultades')->nullable ();
             $table->string ('competencias')->nullable ();
             $table->timestamps();

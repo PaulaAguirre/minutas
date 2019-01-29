@@ -21,7 +21,6 @@ class CreateClientesTable extends Migration
             $table->string ('email')->nullable ();
             $table->string ('telefono')->nullable ();
             $table->string ('tipo')->default ('nuevo');
-            $table->string ('segmento')->default ('home');
             $table->integer ('empresa_id')->nullable ();
             $table->string ('link_bitrix')->nullable ();
             $table->timestamps();
